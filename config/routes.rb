@@ -5,11 +5,10 @@ Rails.application.routes.draw do
       resources :merchants, only: [:index, :show] do
         resources :items, only: [:index]
       end
-      resources :items, only: [:index, :show, :create, :update, :destroy]
-      resources :customers, only: [:index]
-      # resources :invoices, only: [:index]
-      # resources :invoice_items, only: [:index]
-      # resources :transactions, only: [:index]
+      
+      resources :items, only: [:index, :show, :create, :update, :destroy] do
+        resources :merchants, only: [:show]
+      end
     end
   end
 end
