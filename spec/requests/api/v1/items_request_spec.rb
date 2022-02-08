@@ -33,7 +33,6 @@ RSpec.describe 'The item API' do
 
   it 'can get one item by its id' do
     merchant_1 = create(:merchant)
-    merchant_1_items = create_list(:item, 3, merchant_id: merchant_1.id)
     show_item = create(:item, merchant_id: merchant_1.id)
 
     get "/api/v1/items/#{show_item.id}"
