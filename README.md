@@ -28,3 +28,6 @@ Rails-engine is an application developed to mimic an E-Commerce Application. The
 - `gem 'factory_bot_rails'`
 - `gem 'faker', github: 'stympy/faker'`
 - `gem 'simplecov', require: false, group: :test`
+
+## Contributor
+Robin Dittrich
