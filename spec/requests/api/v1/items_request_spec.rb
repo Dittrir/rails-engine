@@ -11,22 +11,23 @@ RSpec.describe 'The item API' do
     get '/api/v1/items'
 
     items = JSON.parse(response.body, symbolize_names: true)
+    items_data = items[:data]
 
     expect(response).to be_successful
-    expect(items.count).to eq(6)
+    expect(items_data.count).to eq(6)
 
-    items.each do |item|
-      expect(item).to have_key(:id)
-      expect(item[:id]).to be_an(Integer)
+    items_data.each do |item|
+      expect(item[:attributes]).to have_key(:id)
+      expect(item[:attributes][:id]).to be_an(Integer)
 
-      expect(item).to have_key(:name)
-      expect(item[:name]).to be_a(String)
+      expect(item[:attributes]).to have_key(:name)
+      expect(item[:attributes][:name]).to be_a(String)
 
-      expect(item).to have_key(:description)
-      expect(item[:description]).to be_a(String)
+      expect(item[:attributes]).to have_key(:description)
+      expect(item[:attributes][:description]).to be_a(String)
 
-      expect(item).to have_key(:unit_price)
-      expect(item[:unit_price]).to be_a(Float)
+      expect(item[:attributes]).to have_key(:unit_price)
+      expect(item[:attributes][:unit_price]).to be_a(Float)
     end
   end
 
@@ -38,20 +39,21 @@ RSpec.describe 'The item API' do
     get "/api/v1/items/#{show_item.id}"
 
     item = JSON.parse(response.body, symbolize_names: true)
+    item_data = item[:data]
 
     expect(response).to be_successful
 
-    expect(item).to have_key(:id)
-    expect(item[:id]).to be_an(Integer)
+    expect(item_data[:attributes]).to have_key(:id)
+    expect(item_data[:attributes][:id]).to be_an(Integer)
 
-    expect(item).to have_key(:name)
-    expect(item[:name]).to be_a(String)
+    expect(item_data[:attributes]).to have_key(:name)
+    expect(item_data[:attributes][:name]).to be_a(String)
 
-    expect(item).to have_key(:description)
-    expect(item[:description]).to be_a(String)
+    expect(item_data[:attributes]).to have_key(:description)
+    expect(item_data[:attributes][:description]).to be_a(String)
 
-    expect(item).to have_key(:unit_price)
-    expect(item[:unit_price]).to be_a(Float)
+    expect(item_data[:attributes]).to have_key(:unit_price)
+    expect(item_data[:attributes][:unit_price]).to be_a(Float)
   end
 
   it 'can create a new item' do
@@ -112,6 +114,7 @@ RSpec.describe 'The item API' do
     get "/api/v1/items/#{merchant_2_item.id}/merchants/#{merchant_2_item.merchant_id}"
 
     merchant = JSON.parse(response.body, symbolize_names: true)
+    merchant_data = item[:data]
 
     expect(response).to be_successful
 
