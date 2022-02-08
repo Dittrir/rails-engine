@@ -21,7 +21,7 @@ RSpec.describe 'The merchant API' do
     end
   end
 
-  it ' always return an array of data, even if one or zero resources are found' do
+  it 'always return an array of data, even if one or zero resources are found' do
     get '/api/v1/merchants'
 
     merchants = JSON.parse(response.body, symbolize_names: true)
@@ -49,6 +49,15 @@ RSpec.describe 'The merchant API' do
 
     expect(merchant_data[:attributes]).to have_key(:name)
     expect(merchant_data[:attributes][:name]).to be_a(String)
+  end
+
+  it 'sad path: bad merchant id returns 404' do
+    non_merchant_id = 10000000000
+
+    get "/api/v1/merchants/#{non_merchant_id}"
+
+    expect(response).to_not be_successful
+    expect(response.status).to eq(404)
   end
 
   it 'get all items for a given merchant ID' do
