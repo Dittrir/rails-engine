@@ -20,7 +20,12 @@ class Api::V1::ItemsController < ApplicationController
   end
 
   def update
-    render(json: ItemSerializer.new(Item.update(params[:id], item_params)))
+    item = Item.update(params[:id], item_params)
+    if item.save
+      render(json: ItemSerializer.new(Item.find(item.id)))
+    else
+      render :status => 404
+    end
   end
 
   def destroy
