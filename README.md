@@ -1,24 +1,11 @@
-# README
+# Rails-Engine Lite: Turing 2110 BE Mod 3
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Description
 
-Things you may want to cover:
+## Learning Goals 
 
-* Ruby version
+## Local Setup
 
-* System dependencies
+## Versions
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Gems
