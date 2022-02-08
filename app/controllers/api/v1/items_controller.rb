@@ -16,6 +16,7 @@ class Api::V1::ItemsController < ApplicationController
     if item.save
       render(json: ItemSerializer.new(item), status: :created)
     else
+      render :status => 400
     end
   end
 
