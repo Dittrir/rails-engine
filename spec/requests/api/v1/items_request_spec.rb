@@ -111,7 +111,7 @@ RSpec.describe 'The item API' do
     merchant_2 = create(:merchant)
     merchant_2_item = create(:item, merchant_id: merchant_2.id)
 
-    get "/api/v1/items/#{merchant_2_item.id}/merchants/#{merchant_2_item.merchant_id}"
+    get "/api/v1/items/#{merchant_2_item.id}/merchant"
 
     merchant = JSON.parse(response.body, symbolize_names: true)
     merchant_data = merchant[:data]
