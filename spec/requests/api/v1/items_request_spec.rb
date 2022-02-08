@@ -114,14 +114,14 @@ RSpec.describe 'The item API' do
     get "/api/v1/items/#{merchant_2_item.id}/merchants/#{merchant_2_item.merchant_id}"
 
     merchant = JSON.parse(response.body, symbolize_names: true)
-    merchant_data = item[:data]
+    merchant_data = merchant[:data]
 
     expect(response).to be_successful
 
-    expect(merchant).to have_key(:id)
-    expect(merchant[:id]).to eq(merchant_2.id)
+    expect(merchant_data[:attributes]).to have_key(:id)
+    expect(merchant_data[:attributes][:id]).to eq(merchant_2.id)
 
-    expect(merchant).to have_key(:name)
-    expect(merchant[:name]).to be_a(String)
+    expect(merchant_data[:attributes]).to have_key(:name)
+    expect(merchant_data[:attributes][:name]).to be_a(String)
   end
 end
