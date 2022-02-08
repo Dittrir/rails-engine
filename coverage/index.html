@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-02-07T22:31:11-08:00">2022-02-07T22:31:11-08:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-02-08T10:33:25-08:00">2022-02-08T10:33:25-08:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -1120,7 +1120,7 @@
 
             
 
-            <code class="ruby">  attributes :id, :name, :description, :unit_price</code>
+            <code class="ruby">  attributes :name, :description, :unit_price</code>
           </li>
         </div>
       
@@ -1195,7 +1195,7 @@
 
             
 
-            <code class="ruby">  attributes :id, :name</code>
+            <code class="ruby">  attributes :name</code>
           </li>
         </div>
       
@@ -4683,7 +4683,7 @@
 
             
 
-            <code class="ruby">      expect(item[:attributes]).to have_key(:id)</code>
+            <code class="ruby">      expect(item).to have_key(:id)</code>
           </li>
         </div>
       
@@ -4694,7 +4694,7 @@
 
             
 
-            <code class="ruby">      expect(item[:attributes][:id]).to be_an(Integer)</code>
+            <code class="ruby">      expect(item[:id].to_i).to be_an(Integer)</code>
           </li>
         </div>
       
@@ -4969,7 +4969,7 @@
 
             
 
-            <code class="ruby">    expect(item_data[:attributes]).to have_key(:id)</code>
+            <code class="ruby">    expect(item_data).to have_key(:id)</code>
           </li>
         </div>
       
@@ -4980,7 +4980,7 @@
 
             
 
-            <code class="ruby">    expect(item_data[:attributes][:id]).to be_an(Integer)</code>
+            <code class="ruby">    expect(item_data[:id].to_i).to be_an(Integer)</code>
           </li>
         </div>
       
@@ -5794,7 +5794,7 @@
 
             
 
-            <code class="ruby">    expect(merchant_data[:attributes]).to have_key(:id)</code>
+            <code class="ruby">    expect(merchant_data).to have_key(:id)</code>
           </li>
         </div>
       
@@ -5805,7 +5805,7 @@
 
             
 
-            <code class="ruby">    expect(merchant_data[:attributes][:id]).to eq(merchant_2.id)</code>
+            <code class="ruby">    expect(merchant_data[:id].to_i).to eq(merchant_2.id)</code>
           </li>
         </div>
       
@@ -6067,7 +6067,7 @@
 
             
 
-            <code class="ruby">      expect(merchant[:attributes]).to have_key(:id)</code>
+            <code class="ruby">      expect(merchant).to have_key(:id)</code>
           </li>
         </div>
       
@@ -6078,7 +6078,7 @@
 
             
 
-            <code class="ruby">      expect(merchant[:attributes][:id]).to be_an(Integer)</code>
+            <code class="ruby">      expect(merchant[:id].to_i).to be_an(Integer)</code>
           </li>
         </div>
       
@@ -6221,7 +6221,7 @@
 
             
 
-            <code class="ruby">    merchant_data = merchant[:data][:attributes]</code>
+            <code class="ruby">    merchant_data = merchant[:data]</code>
           </li>
         </div>
       
@@ -6276,7 +6276,7 @@
 
             
 
-            <code class="ruby">    expect(merchant_data[:id]).to eq(id)</code>
+            <code class="ruby">    expect(merchant_data[:id].to_i).to eq(id)</code>
           </li>
         </div>
       
@@ -6298,7 +6298,7 @@
 
             
 
-            <code class="ruby">    expect(merchant_data).to have_key(:name)</code>
+            <code class="ruby">    expect(merchant_data[:attributes]).to have_key(:name)</code>
           </li>
         </div>
       
@@ -6309,7 +6309,7 @@
 
             
 
-            <code class="ruby">    expect(merchant_data[:name]).to be_a(String)</code>
+            <code class="ruby">    expect(merchant_data[:attributes][:name]).to be_a(String)</code>
           </li>
         </div>
       
@@ -6474,7 +6474,7 @@
 
             
 
-            <code class="ruby">      expect(item[:attributes]).to have_key(:id)</code>
+            <code class="ruby">      expect(item).to have_key(:id)</code>
           </li>
         </div>
       
@@ -6485,7 +6485,7 @@
 
             
 
-            <code class="ruby">      expect(item[:attributes][:id]).to eq(item[:attributes][:id])</code>
+            <code class="ruby">      expect(item[:id].to_i).to be_a(Integer)</code>
           </li>
         </div>
       

@@ -17,8 +17,8 @@ RSpec.describe 'The item API' do
     expect(items_data.count).to eq(6)
 
     items_data.each do |item|
-      expect(item[:attributes]).to have_key(:id)
-      expect(item[:attributes][:id]).to be_an(Integer)
+      expect(item).to have_key(:id)
+      expect(item[:id].to_i).to be_an(Integer)
 
       expect(item[:attributes]).to have_key(:name)
       expect(item[:attributes][:name]).to be_a(String)
@@ -43,8 +43,8 @@ RSpec.describe 'The item API' do
 
     expect(response).to be_successful
 
-    expect(item_data[:attributes]).to have_key(:id)
-    expect(item_data[:attributes][:id]).to be_an(Integer)
+    expect(item_data).to have_key(:id)
+    expect(item_data[:id].to_i).to be_an(Integer)
 
     expect(item_data[:attributes]).to have_key(:name)
     expect(item_data[:attributes][:name]).to be_a(String)
@@ -118,8 +118,8 @@ RSpec.describe 'The item API' do
 
     expect(response).to be_successful
 
-    expect(merchant_data[:attributes]).to have_key(:id)
-    expect(merchant_data[:attributes][:id]).to eq(merchant_2.id)
+    expect(merchant_data).to have_key(:id)
+    expect(merchant_data[:id].to_i).to eq(merchant_2.id)
 
     expect(merchant_data[:attributes]).to have_key(:name)
     expect(merchant_data[:attributes][:name]).to be_a(String)
