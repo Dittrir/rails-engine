@@ -55,6 +55,24 @@ RSpec.describe 'The item API' do
     expect(item_data[:attributes][:unit_price]).to be_a(Float)
   end
 
+  it 'sad path: bad item id returns 404' do
+    non_item_id = 10000000000
+
+    get "/api/v1/merchants/#{non_item_id}"
+
+    expect(response).to_not be_successful
+    expect(response.status).to eq(404)
+  end
+
+  it 'edge case: string id returns 404' do
+    non_item_id = "10000000000"
+
+    get "/api/v1/merchants/#{non_item_id}"
+
+    expect(response).to_not be_successful
+    expect(response.status).to eq(404)
+  end
+
   it 'can create a new item' do
     merchant_1 = create(:merchant)
     item_params = ({
@@ -88,6 +106,34 @@ RSpec.describe 'The item API' do
     expect(response).to be_successful
     expect(updated_item.name).to_not eq(previous_name)
     expect(updated_item.name).to eq("Renamed Item")
+  end
+
+  it "sad path: bad integer id returns 404" do
+    merchant_1 = create(:merchant)
+    old_item = create(:item, merchant_id: merchant_1.id)
+    previous_name = Item.last.name
+    incorrect_id = 10000000000
+    item_params = { name: "Renamed Item", merchant_id: incorrect_id }
+    headers = {"CONTENT_TYPE" => "application/json"}
+
+    patch "/api/v1/items/#{old_item.id}", headers: headers, params: JSON.generate({item: item_params})
+
+    expect(response).to_not be_successful
+    expect(response.status).to eq(404)
+  end
+
+  it "sad path: bad merchant id returns 404" do
+    merchant_1 = create(:merchant)
+    old_item = create(:item, merchant_id: merchant_1.id)
+    previous_name = Item.last.name
+    incorrect_id = "hello world"
+    item_params = { name: "Renamed Item", merchant_id: incorrect_id }
+    headers = {"CONTENT_TYPE" => "application/json"}
+
+    patch "/api/v1/items/#{old_item.id}", headers: headers, params: JSON.generate({item: item_params})
+
+    expect(response).to_not be_successful
+    expect(response.status).to eq(404)
   end
 
   it "can delete an item" do
