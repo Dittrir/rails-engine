@@ -432,12 +432,12 @@
           1,
           1,
           1,
-          1,
-          null,
           null,
           1,
+          null,
           1,
           null,
+          1,
           null,
           null,
           null
@@ -549,7 +549,7 @@
         "lines": [
           1,
           1,
-          2,
+          1,
           null,
           null,
           1,
@@ -590,15 +590,13 @@
           null
         ]
       },
-      "/Users/robindittrich/turing/3module/projects/rails-engine/app/controllers/api/v1/merchants_controller.rb": {
+      "/Users/robindittrich/turing/3module/projects/rails-engine/app/controllers/api/v1/items_merchant_controller.rb": {
         "lines": [
           1,
           1,
           1,
-          null,
-          null,
           1,
-          2,
+          1,
           null,
           null
         ]
@@ -610,8 +608,31 @@
           1,
           null
         ]
+      },
+      "/Users/robindittrich/turing/3module/projects/rails-engine/app/controllers/api/v1/merchants_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/robindittrich/turing/3module/projects/rails-engine/app/controllers/api/v1/merchant_items_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1644345706
+    "timestamp": 1644351996
   }
 }
