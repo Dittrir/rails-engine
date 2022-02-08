@@ -151,12 +151,9 @@ RSpec.describe 'The item API' do
 
   it 'can get the merchant data for the given item id' do
     merchant_1 = create(:merchant)
-    merchant_1_items = create_list(:item, 3, merchant_id: merchant_1.id)
+    merchant_1_item = create(:item, merchant_id: merchant_1.id)
 
-    merchant_2 = create(:merchant)
-    merchant_2_item = create(:item, merchant_id: merchant_2.id)
-
-    get "/api/v1/items/#{merchant_2_item.id}/merchant"
+    get "/api/v1/items/#{merchant_1_item.id}/merchant"
 
     merchant = JSON.parse(response.body, symbolize_names: true)
     merchant_data = merchant[:data]
@@ -168,5 +165,14 @@ RSpec.describe 'The item API' do
 
     expect(merchant_data[:attributes]).to have_key(:name)
     expect(merchant_data[:attributes][:name]).to be_a(String)
+  end
+
+  it 'sad path: bad id returns 404' do
+    incorrect_item_id = 10000000000
+
+    get "/api/v1/items/#{incorrect_item_id}/merchant"
+
+    expect(response).to_not be_successful
+    expect(response.status).to eq(404)
   end
 end
