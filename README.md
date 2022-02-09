@@ -34,7 +34,9 @@ Rails-engine is an application developed to mimic an E-Commerce Application. The
 - `gem 'simplecov', require: false, group: :test`
 
 ## Contributor
-Robin Dittrich
+
 <a href="https://github.com/Dittrir/rails-engine/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=Dittrir/rails-engine" />
 </a>
+
+Robin Dittrich
