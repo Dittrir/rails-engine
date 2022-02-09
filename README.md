@@ -1,5 +1,6 @@
 # Rails-Engine Lite: Turing 2110 BE Mod 3
 [![Dittrir's GitHub stats](https://github-readme-stats.vercel.app/api?username=Dittrir)](https://github.com/Dittrir/github-readme-stats)
+![Dittrir's GitHub stats](https://github-readme-stats.vercel.app/api?username=Dittrir&hide=contribs,prs)
 
 ## Description
 Rails-engine is an application developed to mimic an E-Commerce Application. The plan was to structure this in a service-oriented architecture, meaning the front and back ends of this application are separate and communicate via APIs. My job was to expose the data that powers the site through an API that the front end will consume.
