@@ -15,6 +15,18 @@ RSpec.describe 'The search API' do
     item_data = item[:data]
 
     expect(response).to be_successful
-    expect(items_data.count).to eq(1)
+    expect(item_data.count).to eq(1)
+
+    expect(item_data).to have_key(:id)
+    expect(item_data[:id].to_i).to be_an(Integer)
+
+    expect(item_data[:attributes]).to have_key(:name)
+    expect(item_data[:attributes][:name]).to be_a(String)
+
+    expect(item_data[:attributes]).to have_key(:description)
+    expect(item_data[:attributes][:description]).to be_a(String)
+
+    expect(item_data[:attributes]).to have_key(:unit_price)
+    expect(item_data[:attributes][:unit_price]).to be_a(Float)
   end
 end
