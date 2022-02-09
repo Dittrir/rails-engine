@@ -9,7 +9,7 @@ RSpec.describe 'The search API' do
     non_search_item_2 = create(:item, name: 'Art Supplies', merchant_id: merchant_2.id)
     non_search_item_3 = create(:item, name: 'Bazooka', merchant_id: merchant_2.id)
 
-    get "/api/vi/items/find?name=paraglide"
+    get "/api/v1/items/find?name=paraglide"
 
     search_item = JSON.parse(response.body, symbolize_names: true)
     item_data = item[:data]
