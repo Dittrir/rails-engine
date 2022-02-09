@@ -460,8 +460,8 @@
           1,
           1,
           16,
-          16,
-          16,
+          20,
+          20,
           1,
           null,
           null
@@ -471,7 +471,7 @@
         "lines": [
           1,
           1,
-          15,
+          17,
           null,
           null
         ]
@@ -483,11 +483,13 @@
           1,
           1,
           1,
-          null,
+          1,
+          1,
+          1,
           1,
           null,
           1,
-          null,
+          1,
           1,
           null,
           null,
@@ -582,6 +584,42 @@
           3,
           3,
           null,
+          null,
+          null
+        ]
+      },
+      "/Users/robindittrich/turing/3module/projects/rails-engine/spec/requests/api/v1/search_request_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
           null,
           null
         ]
@@ -726,8 +764,26 @@
           null,
           null
         ]
+      },
+      "/Users/robindittrich/turing/3module/projects/rails-engine/app/controllers/api/v1/search_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1644364801
+    "timestamp": 1644423794
   }
 }
