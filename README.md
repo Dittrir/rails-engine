@@ -1,24 +1,33 @@
-# README
+# Rails-Engine Lite: Turing 2110 BE Mod 3
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Description
+Rails-engine is an application developed to mimic an E-Commerce Application. The plan was to structure this in a service-oriented architecture, meaning the front and back ends of this application are separate and communicate via APIs. My job was to expose the data that powers the site through an API that the front end will consume.
 
-Things you may want to cover:
+## Learning Goals 
+- Expose an API
+- Use serializers to format JSON responses
+- Test API exposure
+- Use SQL and AR to gather data
 
-* Ruby version
+## Local Setup
+1. Fork and Clone the repo ```git clone git@github.com:Dittrir/rails-engine.git```
+2.  Navigate to directory ```cd viewing_party_lite```
+3. Install gem packages: ```bundle install```
+4. Update gem packages: ```bundle update```
+5. Set up the schema: ```rails db:schema:dump```
+6. SRun the migrations: ```rake db:{drop,create,migrate,seed}```
 
-* System dependencies
+## Versions
+- Ruby 2.7.2
+- Rails 5.2.6
 
-* Configuration
+# Gems
+- `gem 'pry'`
+- `gem 'jsonapi-serializer'`
+- `gem 'rspec-rails'`
+- `gem 'factory_bot_rails'`
+- `gem 'faker', github: 'stympy/faker'`
+- `gem 'simplecov', require: false, group: :test`
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Contributor
+Robin Dittrich
