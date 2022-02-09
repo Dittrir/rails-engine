@@ -161,7 +161,7 @@ RSpec.describe 'The item API' do
     expect(response).to be_successful
 
     expect(merchant_data).to have_key(:id)
-    expect(merchant_data[:id].to_i).to eq(merchant_2.id)
+    expect(merchant_data[:id].to_i).to eq(merchant_1.id)
 
     expect(merchant_data[:attributes]).to have_key(:name)
     expect(merchant_data[:attributes][:name]).to be_a(String)
