@@ -30,7 +30,7 @@ class Api::V1::SearchController < ApplicationController
 
   def find_by_min_price
     if params[:min_price].to_f < 0
-      render(json: {data: {error: "Error Message: Price parameters can't be less than 0"}}, status: 400 )
+      render(json: {error: "Error Message: Price parameters can't be less than 0"}, status: 400 )
     else
     item = Item.where("unit_price >= ?", params[:min_price])
                .order(:name)
@@ -104,7 +104,7 @@ class Api::V1::SearchController < ApplicationController
       merchant = Merchant.where("lower(name) LIKE ?", "%#{params[:name].downcase}%")
                          .order(:name)
       if merchant == nil
-        render(json: {data: {message: "No results were found"}}, status: 400 )
+        render(json: {data: {message: "There were no matches"}}, status: 200 )
       else
         render(json: MerchantSerializer.new(merchant), status: 200)
       end

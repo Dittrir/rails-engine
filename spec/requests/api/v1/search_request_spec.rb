@@ -24,11 +24,32 @@ RSpec.describe 'The search API' do
       expect(merchant_data[:attributes][:name]).to eq("#{target_merchant.name}")
     end
 
-    it 'sad path: no name given' do
-      merchant_1 = create(:merchant)
-      target_merchant = create(:merchant, name: 'Target')
-      merchant_2 = create(:merchant)
-      merchant_3 = create(:merchant)
+    it 'sad path: no results found' do
+      merchants = create_list(:merchant, 10)
+
+      get "/api/v1/merchants/find?name=sfasfdasd"
+
+      return_value = JSON.parse(response.body, symbolize_names: true)
+
+      expect(response).to be_successful
+      expect(response.status).to eq(200)
+      expect(return_value[:data][:message]).to eq("There were no matches")
+    end
+
+    it 'edge case: no params given' do
+      merchants = create_list(:merchant, 10)
+
+      get "/api/v1/merchants/find"
+
+      return_value = JSON.parse(response.body, symbolize_names: true)
+
+      expect(response).to_not be_successful
+      expect(response.status).to eq(400)
+      expect(return_value[:data][:message]).to eq("Insufficent query parameters")
+    end
+
+    it 'edge case: no name given' do
+      merchants = create_list(:merchant, 10)
 
       get "/api/v1/merchants/find?name="
 
@@ -38,21 +59,8 @@ RSpec.describe 'The search API' do
       expect(response.status).to eq(400)
       expect(return_value[:data][:message]).to eq("Insufficent query parameters")
     end
-
-    it 'edge case: no params given' do
-      merchant_1 = create(:merchant)
-      target_merchant = create(:merchant, name: 'Target')
-      merchant_2 = create(:merchant)
-      merchant_3 = create(:merchant)
-
-      get "/api/v1/merchants/find"
-
-      search_merchant = JSON.parse(response.body, symbolize_names: true)
-
-      expect(response).to_not be_successful
-      expect(response.status).to eq(400)
-    end
   end
+
 
   describe "finds all merchants by name" do
     it 'happy path' do
@@ -78,13 +86,21 @@ RSpec.describe 'The search API' do
       end
     end
 
-    it 'sad path: no name given' do
+    it 'sad path: no results found' do
+      merchants = create_list(:merchant, 10)
+
+      get "/api/v1/merchants/find_all?name=NOMATCH"
+
+      return_value = JSON.parse(response.body, symbolize_names: true)
+
+      expect(response).to be_successful
+      expect(response.status).to eq(200)
+    end
+
+    it 'edge case: no name given' do
       merchants = create_list(:merchant, 10)
 
       get "/api/v1/merchants/find_all?name="
-
-      expect(response).to_not be_successful
-      expect(response.status).to eq(400)
 
       return_value = JSON.parse(response.body, symbolize_names: true)
 
@@ -181,7 +197,7 @@ RSpec.describe 'The search API' do
 
         expect(response).to_not be_successful
         expect(response.status).to eq(400)
-        expect(return_value[:data][:error]).to eq("Error Message: Price parameters can't be less than 0")
+        expect(return_value[:error]).to eq("Error Message: Price parameters can't be less than 0")
       end
     end
 
