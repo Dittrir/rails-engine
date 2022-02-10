@@ -1,4 +1,5 @@
 # Rails-Engine Lite: Turing 2110 BE Mod 3
+[![Dittrir's GitHub stats](https://github-readme-stats.vercel.app/api?username=Dittrir)](https://github.com/Dittrir/github-readme-stats)
 
 ## Description
 Rails-engine is an application developed to mimic an E-Commerce Application. The plan was to structure this in a service-oriented architecture, meaning the front and back ends of this application are separate and communicate via APIs. My job was to expose the data that powers the site through an API that the front end will consume.
@@ -30,4 +31,9 @@ Rails-engine is an application developed to mimic an E-Commerce Application. The
 - `gem 'simplecov', require: false, group: :test`
 
 ## Contributor
+
+<a href="https://github.com/Dittrir/rails-engine/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Dittrir/rails-engine" />
+</a>
+
 Robin Dittrich
