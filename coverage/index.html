@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-02-09T17:37:51-08:00">2022-02-09T17:37:51-08:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-02-09T20:11:04-08:00">2022-02-09T20:11:04-08:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="green">
-  98.0%
+  98.23%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.88
+         1.96
        </span>
     </span> hits/line
     )
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>500</b> relevant lines,
-    <span class="green"><b>490</b> lines covered</span> and
+    <b>564</b> relevant lines,
+    <span class="green"><b>554</b> lines covered</span> and
     <span class="red"><b>10</b> lines missed. </span>
     (<span class="green">
-  98.0%
+  98.23%
 </span>
 )
   </div>
@@ -116,12 +116,12 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#be8404cdf1596923426d2e834e2150ba43a76570" class="src_link" title="app/controllers/api/v1/search_controller.rb">app/controllers/api/v1/search_controller.rb</a></td>
-            <td class="yellow strong cell--number t-file__coverage">85.71 %</td>
-            <td class="cell--number">82</td>
-            <td class="cell--number">42</td>
-            <td class="cell--number">36</td>
+            <td class="yellow strong cell--number t-file__coverage">90.00 %</td>
+            <td class="cell--number">123</td>
+            <td class="cell--number">60</td>
+            <td class="cell--number">54</td>
             <td class="cell--number">6</td>
-            <td class="cell--number">1.31</td>
+            <td class="cell--number">1.70</td>
             
           </tr>
         
@@ -330,7 +330,7 @@
             <td class="cell--number">6</td>
             <td class="cell--number">6</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">39.17</td>
+            <td class="cell--number">50.50</td>
             
           </tr>
         
@@ -341,7 +341,7 @@
             <td class="cell--number">3</td>
             <td class="cell--number">3</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">32.67</td>
+            <td class="cell--number">34.67</td>
             
           </tr>
         
@@ -381,11 +381,11 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#72f8b0892c5e5328082e1921a4bf1305e6ef99d9" class="src_link" title="spec/requests/api/v1/search_request_spec.rb">spec/requests/api/v1/search_request_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">259</td>
-            <td class="cell--number">167</td>
-            <td class="cell--number">167</td>
+            <td class="cell--number">331</td>
+            <td class="cell--number">213</td>
+            <td class="cell--number">213</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">1.14</td>
+            <td class="cell--number">1.11</td>
             
           </tr>
         
@@ -1316,7 +1316,7 @@
     <h3>app/controllers/api/v1/search_controller.rb</h3>
     <h4>
       <span class="yellow">
-  85.71%
+  90.0%
 </span>
 
       lines covered
@@ -1325,8 +1325,8 @@
     
 
     <div class="t-line-summary">
-      <b>42</b> relevant lines.
-      <span class="green"><b>36</b> lines covered</span> and
+      <b>60</b> relevant lines.
+      <span class="green"><b>54</b> lines covered</span> and
       <span class="red"><b>6</b> lines missed.</span>
     </div>
 
@@ -1360,106 +1360,95 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="6" data-linenumber="3">
+          <li class="covered" data-hits="10" data-linenumber="3">
+            <span class="hits">10</span>
+            
+
+            
+
+            <code class="ruby">    if params[:min_price].present? &amp;&amp; params[:name].present?</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="4">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      render(json: {data: {message: &quot;Insufficent query parameters&quot;}}, status: 400 )</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="9" data-linenumber="5">
+            <span class="hits">9</span>
+            
+
+            
+
+            <code class="ruby">    elsif params[:max_price].present? &amp;&amp; params[:name].present?</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="6">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      render(json: {data: {message: &quot;Insufficent query parameters&quot;}}, status: 400 )</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="8" data-linenumber="7">
+            <span class="hits">8</span>
+            
+
+            
+
+            <code class="ruby">    elsif params[:min_price].present? &amp;&amp; params[:max_price].present?</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="8">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">      self.find_by_min_and_max_price</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="6" data-linenumber="9">
             <span class="hits">6</span>
             
 
             
 
-            <code class="ruby">    if params[:name].present?</code>
+            <code class="ruby">    elsif params[:name].present?</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="4">
+          <li class="covered" data-hits="2" data-linenumber="10">
             <span class="hits">2</span>
             
 
             
 
-            <code class="ruby">      item = Item.where(&quot;lower(name) LIKE ?&quot;, &quot;%#{params[:name].downcase}%&quot;)</code>
+            <code class="ruby">      self.find_by_name</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="5">
-            
-            
-
-            
-
-            <code class="ruby">                 .order(:name)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="6">
-            
-            
-
-            
-
-            <code class="ruby">                 .first</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="2" data-linenumber="7">
-            <span class="hits">2</span>
-            
-
-            
-
-            <code class="ruby">      if item == nil</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="8">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">        render(json: {data: {message: &quot;There were no matches&quot;}}, status: 200 )</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="9">
-            
-            
-
-            
-
-            <code class="ruby">      else</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="10">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">        render(json: ItemSerializer.new(item), status: 200)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="11">
-            
-            
-
-            
-
-            <code class="ruby">      end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="4" data-linenumber="12">
+          <li class="covered" data-hits="4" data-linenumber="11">
             <span class="hits">4</span>
             
 
@@ -1470,13 +1459,24 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="13">
+          <li class="covered" data-hits="3" data-linenumber="12">
             <span class="hits">3</span>
             
 
             
 
-            <code class="ruby">      if params[:min_price].to_f &lt; 0</code>
+            <code class="ruby">      self.find_by_min_price</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="13">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    elsif params[:max_price].present? &amp;&amp; params[:max_price].to_f &gt; 0</code>
           </li>
         </div>
       
@@ -1487,7 +1487,7 @@
 
             
 
-            <code class="ruby">        render(json: {data: {message: &quot;Min Price can&#39;t be less than 0&quot;}}, status: 400 )</code>
+            <code class="ruby">      self.find_by_max_price</code>
           </li>
         </div>
       
@@ -1498,18 +1498,18 @@
 
             
 
-            <code class="ruby">      else</code>
+            <code class="ruby">    else</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="16">
-            <span class="hits">2</span>
+          <li class="missed" data-hits="0" data-linenumber="16">
+            
             
 
             
 
-            <code class="ruby">      item = Item.where(&quot;unit_price &gt; ?&quot;, params[:min_price])</code>
+            <code class="ruby">      render(json: {data: {message: &quot;Insufficent query parameters&quot;}}, status: 400 )</code>
           </li>
         </div>
       
@@ -1520,7 +1520,7 @@
 
             
 
-            <code class="ruby">                 .order(:name)</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -1531,18 +1531,18 @@
 
             
 
-            <code class="ruby">                 .first</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="19">
-            <span class="hits">2</span>
+          <li class="never" data-hits="" data-linenumber="19">
+            
             
 
             
 
-            <code class="ruby">        if item == nil</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -1553,29 +1553,29 @@
 
             
 
-            <code class="ruby">          render(json: {data: {message: &quot;There were no matches&quot;}}, status: 200 )</code>
+            <code class="ruby">  def find_by_name</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="21">
-            
-            
-
+          <li class="covered" data-hits="2" data-linenumber="21">
+            <span class="hits">2</span>
             
 
-            <code class="ruby">        else</code>
+            
+
+            <code class="ruby">    item = Item.where(&quot;lower(name) LIKE ?&quot;, &quot;%#{params[:name].downcase}%&quot;)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="22">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="22">
+            
             
 
             
 
-            <code class="ruby">          render(json: ItemSerializer.new(item), status: 200)</code>
+            <code class="ruby">               .order(:name)</code>
           </li>
         </div>
       
@@ -1586,18 +1586,18 @@
 
             
 
-            <code class="ruby">        end</code>
+            <code class="ruby">               .first</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="24">
-            
-            
-
+          <li class="covered" data-hits="2" data-linenumber="24">
+            <span class="hits">2</span>
             
 
-            <code class="ruby">      end</code>
+            
+
+            <code class="ruby">    if item == nil</code>
           </li>
         </div>
       
@@ -1608,29 +1608,29 @@
 
             
 
-            <code class="ruby">    elsif params[:max_price].present?</code>
+            <code class="ruby">      render(json: {data: {message: &quot;There were no matches&quot;}}, status: 200 )</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="26">
+          <li class="never" data-hits="" data-linenumber="26">
+            
+            
+
+            
+
+            <code class="ruby">    else</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="27">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">      item = Item.where(&quot;unit_price &lt; ?&quot;, params[:max_price])</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="27">
-            
-            
-
-            
-
-            <code class="ruby">                 .order(unit_price: :desc)</code>
+            <code class="ruby">      render(json: ItemSerializer.new(item), status: 200)</code>
           </li>
         </div>
       
@@ -1641,78 +1641,67 @@
 
             
 
-            <code class="ruby">                 .first</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="29">
+          <li class="never" data-hits="" data-linenumber="29">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="30">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="31">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">      if item == nil</code>
+            <code class="ruby">  def find_by_min_price</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="30">
-            
-            
-
+          <li class="covered" data-hits="3" data-linenumber="32">
+            <span class="hits">3</span>
             
 
-            <code class="ruby">        render(json: {data: {message: &quot;There were no matches&quot;}}, status: 200 )</code>
+            
+
+            <code class="ruby">    if params[:min_price].to_f &lt; 0</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="31">
-            
-            
-
-            
-
-            <code class="ruby">      else</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="32">
+          <li class="covered" data-hits="1" data-linenumber="33">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">        render(json: ItemSerializer.new(item), status: 200)</code>
+            <code class="ruby">      render(json: {data: {error: &quot;Error Message: Price parameters can&#39;t be less than 0&quot;}}, status: 400 )</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="33">
-            
-            
-
-            
-
-            <code class="ruby">      end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="34">
-            
-            
-
-            
-
-            <code class="ruby">    elsif params[:min_price].present? &amp;&amp; params[:max_price].present?</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="35">
+          <li class="never" data-hits="" data-linenumber="34">
             
             
 
@@ -1723,13 +1712,24 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="36">
+          <li class="covered" data-hits="2" data-linenumber="35">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">    item = Item.where(&quot;unit_price &gt;= ?&quot;, params[:min_price])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="36">
             
             
 
             
 
-            <code class="ruby">      render(json: {data: {message: &quot;Insufficent query parameters&quot;}}, status: 400 )</code>
+            <code class="ruby">               .order(:name)</code>
           </li>
         </div>
       
@@ -1740,79 +1740,13 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">               .first</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="38">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="39">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="40">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  def find_all_items</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="2" data-linenumber="41">
+          <li class="covered" data-hits="2" data-linenumber="38">
             <span class="hits">2</span>
-            
-
-            
-
-            <code class="ruby">    if params[:name].present?</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="42">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">      item = Item.where(&quot;lower(name) LIKE ?&quot;, &quot;%#{params[:name].downcase}%&quot;)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="43">
-            
-            
-
-            
-
-            <code class="ruby">                         .order(:name)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="44">
-            <span class="hits">1</span>
             
 
             
@@ -1822,8 +1756,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="45">
-            
+          <li class="covered" data-hits="1" data-linenumber="39">
+            <span class="hits">1</span>
             
 
             
@@ -1833,7 +1767,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="46">
+          <li class="never" data-hits="" data-linenumber="40">
             
             
 
@@ -1844,7 +1778,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="47">
+          <li class="covered" data-hits="1" data-linenumber="41">
             <span class="hits">1</span>
             
 
@@ -1855,13 +1789,79 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="48">
+          <li class="never" data-hits="" data-linenumber="42">
             
             
 
             
 
             <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="43">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="44">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="45">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="46">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def find_by_max_price</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="47">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    item = Item.where(&quot;unit_price &lt;= ?&quot;, params[:max_price])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="48">
+            
+            
+
+            
+
+            <code class="ruby">               .order(unit_price: :desc)</code>
           </li>
         </div>
       
@@ -1872,7 +1872,7 @@
 
             
 
-            <code class="ruby">    else</code>
+            <code class="ruby">               .first</code>
           </li>
         </div>
       
@@ -1883,18 +1883,18 @@
 
             
 
-            <code class="ruby">      render(json: {data: {message: &quot;Insufficent query parameters&quot;}}, status: 400 )</code>
+            <code class="ruby">    if item == nil</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="51">
+          <li class="missed" data-hits="0" data-linenumber="51">
             
             
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">      render(json: {data: {message: &quot;There were no matches&quot;}}, status: 200 )</code>
           </li>
         </div>
       
@@ -1905,12 +1905,45 @@
 
             
 
+            <code class="ruby">    else</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="53">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      render(json: ItemSerializer.new(item), status: 200)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="54">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="55">
+            
+            
+
+            
+
             <code class="ruby">  end</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="53">
+          <li class="never" data-hits="" data-linenumber="56">
             
             
 
@@ -1921,57 +1954,24 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="54">
+          <li class="covered" data-hits="1" data-linenumber="57">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  def find_merchant</code>
+            <code class="ruby">  def find_by_min_and_max_price</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="55">
-            <span class="hits">3</span>
+          <li class="covered" data-hits="2" data-linenumber="58">
+            <span class="hits">2</span>
             
 
             
 
-            <code class="ruby">    if params[:name].present?</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="56">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">      merchant = Merchant.where(&quot;lower(name) LIKE ?&quot;, &quot;%#{params[:name].downcase}%&quot;)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="57">
-            
-            
-
-            
-
-            <code class="ruby">                 .order(:name)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="58">
-            
-            
-
-            
-
-            <code class="ruby">                 .first</code>
+            <code class="ruby">    if params[:min_price].to_f &lt; params[:max_price].to_f &amp;&amp; params[:min_price].to_f &gt; 0</code>
           </li>
         </div>
       
@@ -1982,18 +1982,18 @@
 
             
 
-            <code class="ruby">      if merchant == nil</code>
+            <code class="ruby">      item = Item.where(&quot;unit_price &lt;= ?&quot;, params[:max_price])</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="60">
+          <li class="never" data-hits="" data-linenumber="60">
             
             
 
             
 
-            <code class="ruby">        render(json: {data: {message: &quot;There were no matches&quot;}}, status: 200 )</code>
+            <code class="ruby">                 .where(&quot;unit_price &gt;= ?&quot;, params[:min_price])</code>
           </li>
         </div>
       
@@ -2004,62 +2004,62 @@
 
             
 
-            <code class="ruby">      else</code>
+            <code class="ruby">                 .order(unit_price: :desc)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="62">
+          <li class="never" data-hits="" data-linenumber="62">
+            
+            
+
+            
+
+            <code class="ruby">                 .first</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="63">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">        render(json: MerchantSerializer.new(merchant), status: 200)</code>
+            <code class="ruby">      if item == nil</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="63">
+          <li class="missed" data-hits="0" data-linenumber="64">
             
             
 
             
 
-            <code class="ruby">      end</code>
+            <code class="ruby">        render(json: {data: {message: &quot;There were no matches&quot;}}, status: 200 )</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="64">
+          <li class="never" data-hits="" data-linenumber="65">
             
             
 
             
 
-            <code class="ruby">    else</code>
+            <code class="ruby">      else</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="65">
-            <span class="hits">2</span>
+          <li class="covered" data-hits="1" data-linenumber="66">
+            <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">      render(json: {data: {message: &quot;Insufficent query parameters&quot;}}, status: 400 )</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="66">
-            
-            
-
-            
-
-            <code class="ruby">    end</code>
+            <code class="ruby">        render(json: ItemSerializer.new(item), status: 200)</code>
           </li>
         </div>
       
@@ -2070,7 +2070,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">      end</code>
           </li>
         </div>
       
@@ -2081,7 +2081,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">    else</code>
           </li>
         </div>
       
@@ -2092,122 +2092,12 @@
 
             
 
-            <code class="ruby">  def find_all_merchants</code>
+            <code class="ruby">      render(json: {data: {message: &quot;Min price can&#39;t be more than max price&quot;}}, status: 400 )</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="70">
-            <span class="hits">2</span>
-            
-
-            
-
-            <code class="ruby">    if params[:name].present?</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="71">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">      merchant = Merchant.where(&quot;lower(name) LIKE ?&quot;, &quot;%#{params[:name].downcase}%&quot;)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="72">
-            
-            
-
-            
-
-            <code class="ruby">                         .order(:name)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="73">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">      if merchant == nil</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="74">
-            
-            
-
-            
-
-            <code class="ruby">        render(json: {data: {message: &quot;No results were found&quot;}}, status: 400 )</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="75">
-            
-            
-
-            
-
-            <code class="ruby">      else</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="76">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">        render(json: MerchantSerializer.new(merchant), status: 200)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="77">
-            
-            
-
-            
-
-            <code class="ruby">      end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="78">
-            
-            
-
-            
-
-            <code class="ruby">    else</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="79">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">      render(json: {data: {message: &quot;Insufficent query parameters&quot;}}, status: 400)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="80">
+          <li class="never" data-hits="" data-linenumber="70">
             
             
 
@@ -2218,7 +2108,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="81">
+          <li class="never" data-hits="" data-linenumber="71">
             
             
 
@@ -2229,7 +2119,568 @@
         </div>
       
         <div>
+          <li class="never" data-hits="" data-linenumber="72">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="73">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def find_all_items</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="74">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">    if params[:name].present?</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="75">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      item = Item.where(&quot;lower(name) LIKE ?&quot;, &quot;%#{params[:name].downcase}%&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="76">
+            
+            
+
+            
+
+            <code class="ruby">                         .order(:name)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="77">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      if item == nil</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="78">
+            
+            
+
+            
+
+            <code class="ruby">        render(json: {data: {message: &quot;There were no matches&quot;}}, status: 200 )</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="79">
+            
+            
+
+            
+
+            <code class="ruby">      else</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="80">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        render(json: ItemSerializer.new(item), status: 200)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="81">
+            
+            
+
+            
+
+            <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
           <li class="never" data-hits="" data-linenumber="82">
+            
+            
+
+            
+
+            <code class="ruby">    else</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="83">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      render(json: {data: {message: &quot;Insufficent query parameters&quot;}}, status: 400 )</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="84">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="85">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="86">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="87">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="88">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="89">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="90">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="91">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def find_merchant</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="92">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">    if params[:name].present?</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="93">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      merchant = Merchant.where(&quot;lower(name) LIKE ?&quot;, &quot;%#{params[:name].downcase}%&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="94">
+            
+            
+
+            
+
+            <code class="ruby">                 .order(:name)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="95">
+            
+            
+
+            
+
+            <code class="ruby">                 .first</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="96">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      if merchant == nil</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="97">
+            
+            
+
+            
+
+            <code class="ruby">        render(json: {data: {message: &quot;There were no matches&quot;}}, status: 200 )</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="98">
+            
+            
+
+            
+
+            <code class="ruby">      else</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="99">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        render(json: MerchantSerializer.new(merchant), status: 200)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="100">
+            
+            
+
+            
+
+            <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="101">
+            
+            
+
+            
+
+            <code class="ruby">    else</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="102">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">      render(json: {data: {message: &quot;Insufficent query parameters&quot;}}, status: 400 )</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="103">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="104">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="105">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="106">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="107">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="108">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="109">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="110">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def find_all_merchants</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="111">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">    if params[:name].present?</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="112">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      merchant = Merchant.where(&quot;lower(name) LIKE ?&quot;, &quot;%#{params[:name].downcase}%&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="113">
+            
+            
+
+            
+
+            <code class="ruby">                         .order(:name)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="114">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      if merchant == nil</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="115">
+            
+            
+
+            
+
+            <code class="ruby">        render(json: {data: {message: &quot;No results were found&quot;}}, status: 400 )</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="116">
+            
+            
+
+            
+
+            <code class="ruby">      else</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="117">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        render(json: MerchantSerializer.new(merchant), status: 200)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="118">
+            
+            
+
+            
+
+            <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="119">
+            
+            
+
+            
+
+            <code class="ruby">    else</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="120">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      render(json: {data: {message: &quot;Insufficent query parameters&quot;}}, status: 400)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="121">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="122">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="123">
             
             
 
@@ -5128,8 +5579,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="68" data-linenumber="3">
-            <span class="hits">68</span>
+          <li class="covered" data-hits="90" data-linenumber="3">
+            <span class="hits">90</span>
             
 
             
@@ -5139,8 +5590,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="83" data-linenumber="4">
-            <span class="hits">83</span>
+          <li class="covered" data-hits="107" data-linenumber="4">
+            <span class="hits">107</span>
             
 
             
@@ -5150,8 +5601,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="81" data-linenumber="5">
-            <span class="hits">81</span>
+          <li class="covered" data-hits="103" data-linenumber="5">
+            <span class="hits">103</span>
             
 
             
@@ -5247,8 +5698,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="96" data-linenumber="3">
-            <span class="hits">96</span>
+          <li class="covered" data-hits="102" data-linenumber="3">
+            <span class="hits">102</span>
             
 
             
@@ -9032,8 +9483,8 @@
     
 
     <div class="t-line-summary">
-      <b>167</b> relevant lines.
-      <span class="green"><b>167</b> lines covered</span> and
+      <b>213</b> relevant lines.
+      <span class="green"><b>213</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -10932,12 +11383,34 @@
 
             
 
+            <code class="ruby">    return_value = JSON.parse(response.body, symbolize_names: true)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="173">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="174">
+            <span class="hits">1</span>
+            
+
+            
+
             <code class="ruby">    expect(response).to_not be_successful</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="173">
+          <li class="covered" data-hits="1" data-linenumber="175">
             <span class="hits">1</span>
             
 
@@ -10948,7 +11421,18 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="174">
+          <li class="covered" data-hits="1" data-linenumber="176">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(return_value[:data][:error]).to eq(&quot;Error Message: Price parameters can&#39;t be less than 0&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="177">
             
             
 
@@ -10959,46 +11443,13 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="175">
+          <li class="never" data-hits="" data-linenumber="178">
             
             
 
             
 
             <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="176">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  it &#39;find one item by max price&#39; do</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="177">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    merchant_1 = create(:merchant)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="178">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    merchant_2 = create(:merchant)</code>
           </li>
         </div>
       
@@ -11009,7 +11460,7 @@
 
             
 
-            <code class="ruby">    target_item = create(:item, unit_price: 1234567, merchant_id: merchant_1.id)</code>
+            <code class="ruby">  it &#39;find one item by max price&#39; do</code>
           </li>
         </div>
       
@@ -11020,7 +11471,7 @@
 
             
 
-            <code class="ruby">    non_search_item_1 = create(:item, name: &#39;Ski Bindings&#39;, merchant_id: merchant_1.id)</code>
+            <code class="ruby">    merchant_1 = create(:merchant)</code>
           </li>
         </div>
       
@@ -11031,7 +11482,7 @@
 
             
 
-            <code class="ruby">    non_search_item_2 = create(:item, name: &#39;Art Supplies&#39;, merchant_id: merchant_2.id)</code>
+            <code class="ruby">    merchant_2 = create(:merchant)</code>
           </li>
         </div>
       
@@ -11042,18 +11493,18 @@
 
             
 
-            <code class="ruby">    non_search_item_3 = create(:item, name: &#39;Bazooka&#39;, merchant_id: merchant_2.id)</code>
+            <code class="ruby">    target_item = create(:item, unit_price: 1234567, merchant_id: merchant_1.id)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="183">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="183">
+            <span class="hits">1</span>
             
 
-            <code class="ruby"></code>
+            
+
+            <code class="ruby">    non_search_item_1 = create(:item, name: &#39;Ski Bindings&#39;, merchant_id: merchant_1.id)</code>
           </li>
         </div>
       
@@ -11064,51 +11515,51 @@
 
             
 
+            <code class="ruby">    non_search_item_2 = create(:item, name: &#39;Art Supplies&#39;, merchant_id: merchant_2.id)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="185">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    non_search_item_3 = create(:item, name: &#39;Bazooka&#39;, merchant_id: merchant_2.id)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="186">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="187">
+            <span class="hits">1</span>
+            
+
+            
+
             <code class="ruby">    get &quot;/api/v1/items/find?max_price=1234568&quot;</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="185">
+          <li class="never" data-hits="" data-linenumber="188">
             
             
 
             
 
             <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="186">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    search_item = JSON.parse(response.body, symbolize_names: true)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="187">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="188">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    expect(response).to be_successful</code>
           </li>
         </div>
       
@@ -11119,7 +11570,7 @@
 
             
 
-            <code class="ruby">    expect(search_item.count).to eq(1)</code>
+            <code class="ruby">    search_item = JSON.parse(response.body, symbolize_names: true)</code>
           </li>
         </div>
       
@@ -11141,12 +11592,23 @@
 
             
 
-            <code class="ruby">    item = search_item[:data]</code>
+            <code class="ruby">    expect(response).to be_successful</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="192">
+          <li class="covered" data-hits="1" data-linenumber="192">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(search_item.count).to eq(1)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="193">
             
             
 
@@ -11157,24 +11619,13 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="193">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    expect(item).to have_key(:id)</code>
-          </li>
-        </div>
-      
-        <div>
           <li class="covered" data-hits="1" data-linenumber="194">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    expect(item[:id].to_i).to be_an(Integer)</code>
+            <code class="ruby">    item = search_item[:data]</code>
           </li>
         </div>
       
@@ -11196,7 +11647,7 @@
 
             
 
-            <code class="ruby">    expect(item[:attributes]).to have_key(:name)</code>
+            <code class="ruby">    expect(item).to have_key(:id)</code>
           </li>
         </div>
       
@@ -11207,7 +11658,7 @@
 
             
 
-            <code class="ruby">    expect(item[:attributes][:name]).to eq(&quot;#{target_item.name}&quot;)</code>
+            <code class="ruby">    expect(item[:id].to_i).to be_an(Integer)</code>
           </li>
         </div>
       
@@ -11229,7 +11680,7 @@
 
             
 
-            <code class="ruby">    expect(item[:attributes]).to have_key(:description)</code>
+            <code class="ruby">    expect(item[:attributes]).to have_key(:name)</code>
           </li>
         </div>
       
@@ -11240,7 +11691,7 @@
 
             
 
-            <code class="ruby">    expect(item[:attributes][:description]).to eq(&quot;#{target_item.description}&quot;)</code>
+            <code class="ruby">    expect(item[:attributes][:name]).to eq(&quot;#{target_item.name}&quot;)</code>
           </li>
         </div>
       
@@ -11262,7 +11713,7 @@
 
             
 
-            <code class="ruby">    expect(item[:attributes]).to have_key(:unit_price)</code>
+            <code class="ruby">    expect(item[:attributes]).to have_key(:description)</code>
           </li>
         </div>
       
@@ -11273,7 +11724,7 @@
 
             
 
-            <code class="ruby">    expect(item[:attributes][:unit_price]).to eq(target_item.unit_price)</code>
+            <code class="ruby">    expect(item[:attributes][:description]).to eq(&quot;#{target_item.description}&quot;)</code>
           </li>
         </div>
       
@@ -11284,18 +11735,18 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="205">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="205">
+            <span class="hits">1</span>
             
 
-            <code class="ruby"></code>
+            
+
+            <code class="ruby">    expect(item[:attributes]).to have_key(:unit_price)</code>
           </li>
         </div>
       
@@ -11306,122 +11757,12 @@
 
             
 
-            <code class="ruby">  it &#39;edge case: price too high and no matches found for find one item by price&#39; do</code>
+            <code class="ruby">    expect(item[:attributes][:unit_price]).to eq(target_item.unit_price)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="207">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    target_item_1 = create(:item, name: &#39;Target1&#39;)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="208">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    other_items = create_list(:item, 10)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="209">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="210">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    get &quot;/api/v1/items/find?min_price=10000000&quot;</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="211">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="212">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    return_value = JSON.parse(response.body, symbolize_names: true)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="213">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="214">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    expect(response).to be_successful</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="215">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    expect(response.status).to eq(200)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="216">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    expect(return_value[:data][:message]).to eq(&quot;There were no matches&quot;)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="217">
+          <li class="never" data-hits="" data-linenumber="207">
             
             
 
@@ -11432,7 +11773,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="218">
+          <li class="never" data-hits="" data-linenumber="208">
             
             
 
@@ -11443,18 +11784,18 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="219">
+          <li class="covered" data-hits="1" data-linenumber="209">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  it &#39;find all items by name&#39; do</code>
+            <code class="ruby">  it &#39;edge case: price too high and no matches found for find one item by price&#39; do</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="220">
+          <li class="covered" data-hits="1" data-linenumber="210">
             <span class="hits">1</span>
             
 
@@ -11465,29 +11806,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="221">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    target_item_2 = create(:item, name: &#39;Target2&#39;)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="222">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    target_item_3 = create(:item, name: &#39;Target3&#39;)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="223">
+          <li class="covered" data-hits="1" data-linenumber="211">
             <span class="hits">1</span>
             
 
@@ -11498,7 +11817,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="224">
+          <li class="never" data-hits="" data-linenumber="212">
             
             
 
@@ -11509,18 +11828,18 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="225">
+          <li class="covered" data-hits="1" data-linenumber="213">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    get &quot;/api/v1/items/find_all?name=target&quot;</code>
+            <code class="ruby">    get &quot;/api/v1/items/find?min_price=10000000&quot;</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="226">
+          <li class="never" data-hits="" data-linenumber="214">
             
             
 
@@ -11531,13 +11850,145 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="227">
+          <li class="covered" data-hits="1" data-linenumber="215">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    search_item = JSON.parse(response.body, symbolize_names: true)</code>
+            <code class="ruby">    return_value = JSON.parse(response.body, symbolize_names: true)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="216">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="217">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(response).to be_successful</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="218">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(response.status).to eq(200)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="219">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(return_value[:data][:message]).to eq(&quot;There were no matches&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="220">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="221">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="222">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  it &#39;sad path: cannot send name and min price&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="223">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    merchant_1 = create(:merchant)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="224">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    other_items = create_list(:item, 10, merchant_id: merchant_1.id)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="225">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="226">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    get &quot;/api/v1/items/find?name=ring&amp;min_price=50&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="227">
+            
+            
+
+            
+
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -11548,7 +11999,7 @@
 
             
 
-            <code class="ruby">    items_data = search_item[:data]</code>
+            <code class="ruby">    return_value = JSON.parse(response.body, symbolize_names: true)</code>
           </li>
         </div>
       
@@ -11570,7 +12021,7 @@
 
             
 
-            <code class="ruby">    expect(response).to be_successful</code>
+            <code class="ruby">    expect(response).to_not be_successful</code>
           </li>
         </div>
       
@@ -11581,56 +12032,34 @@
 
             
 
-            <code class="ruby">    expect(items_data.count).to eq(3)</code>
+            <code class="ruby">    expect(response.status).to eq(400)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="232">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="233">
+          <li class="covered" data-hits="1" data-linenumber="232">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    items_data.each do |item|</code>
+            <code class="ruby">    expect(return_value[:data][:message]).to eq(&quot;Insufficent query parameters&quot;)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="234">
-            <span class="hits">3</span>
+          <li class="never" data-hits="" data-linenumber="233">
+            
             
 
             
 
-            <code class="ruby">      expect(item).to have_key(:id)</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="235">
-            <span class="hits">3</span>
-            
-
-            
-
-            <code class="ruby">      expect(item[:id].to_i).to be_an(Integer)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="236">
+          <li class="never" data-hits="" data-linenumber="234">
             
             
 
@@ -11641,29 +12070,40 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="237">
-            <span class="hits">3</span>
+          <li class="covered" data-hits="1" data-linenumber="235">
+            <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">      expect(item[:attributes]).to have_key(:name)</code>
+            <code class="ruby">  it &#39;sad path: cannot send name and max price&#39; do</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="238">
-            <span class="hits">3</span>
+          <li class="covered" data-hits="1" data-linenumber="236">
+            <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">      expect(item[:attributes][:name]).to be_an(String)</code>
+            <code class="ruby">    merchant_1 = create(:merchant)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="239">
+          <li class="covered" data-hits="1" data-linenumber="237">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    other_items = create_list(:item, 10, merchant_id: merchant_1.id)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="238">
             
             
 
@@ -11674,24 +12114,35 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="240">
-            <span class="hits">3</span>
+          <li class="covered" data-hits="1" data-linenumber="239">
+            <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">      expect(item[:attributes]).to have_key(:description)</code>
+            <code class="ruby">    get &quot;/api/v1/items/find?name=ring&amp;max_price=50&quot;</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="241">
-            <span class="hits">3</span>
+          <li class="never" data-hits="" data-linenumber="240">
+            
             
 
             
 
-            <code class="ruby">      expect(item[:attributes][:description]).to be_an(String)</code>
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="241">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    return_value = JSON.parse(response.body, symbolize_names: true)</code>
           </li>
         </div>
       
@@ -11707,35 +12158,35 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="243">
-            <span class="hits">3</span>
+          <li class="covered" data-hits="1" data-linenumber="243">
+            <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">      expect(item[:attributes]).to have_key(:unit_price)</code>
+            <code class="ruby">    expect(response).to_not be_successful</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="244">
-            <span class="hits">3</span>
+          <li class="covered" data-hits="1" data-linenumber="244">
+            <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">      expect(item[:attributes][:unit_price]).to be_an(Float)</code>
+            <code class="ruby">    expect(response.status).to eq(400)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="245">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="245">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">    end</code>
+            
+
+            <code class="ruby">    expect(return_value[:data][:message]).to eq(&quot;Insufficent query parameters&quot;)</code>
           </li>
         </div>
       
@@ -11768,7 +12219,7 @@
 
             
 
-            <code class="ruby">  it &#39;edge case: no param given for find all items by name&#39; do</code>
+            <code class="ruby">  it &#39;find one item by min and max price&#39; do</code>
           </li>
         </div>
       
@@ -11779,18 +12230,18 @@
 
             
 
-            <code class="ruby">    items = create_list(:item, 10)</code>
+            <code class="ruby">    merchant_1 = create(:merchant)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="250">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="250">
+            <span class="hits">1</span>
             
 
-            <code class="ruby"></code>
+            
+
+            <code class="ruby">    merchant_2 = create(:merchant)</code>
           </li>
         </div>
       
@@ -11801,12 +12252,23 @@
 
             
 
-            <code class="ruby">    get &quot;/api/v1/items/find_all&quot;</code>
+            <code class="ruby">    target_item = create(:item, unit_price: 1234567, merchant_id: merchant_1.id)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="252">
+          <li class="covered" data-hits="1" data-linenumber="252">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    non_search_item_1 = create(:item, name: &#39;Ski Bindings&#39;, merchant_id: merchant_1.id)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="253">
             
             
 
@@ -11817,35 +12279,24 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="253">
+          <li class="covered" data-hits="1" data-linenumber="254">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    return_value = JSON.parse(response.body, symbolize_names: true)</code>
+            <code class="ruby">    get &quot;/api/v1/items/find?min_price=1234566&amp;max_price=1234568&quot;</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="254">
+          <li class="never" data-hits="" data-linenumber="255">
             
             
 
             
 
             <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="255">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    expect(response).to_not be_successful</code>
           </li>
         </div>
       
@@ -11856,23 +12307,199 @@
 
             
 
-            <code class="ruby">    expect(response.status).to eq(400)</code>
+            <code class="ruby">    search_item = JSON.parse(response.body, symbolize_names: true)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="257">
+          <li class="never" data-hits="" data-linenumber="257">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="258">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    expect(return_value[:data][:message]).to eq(&quot;Insufficent query parameters&quot;)</code>
+            <code class="ruby">    expect(response).to be_successful</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="258">
+          <li class="covered" data-hits="1" data-linenumber="259">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(search_item.count).to eq(1)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="260">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="261">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    item = search_item[:data]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="262">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="263">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(item).to have_key(:id)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="264">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(item[:id].to_i).to be_an(Integer)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="265">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="266">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(item[:attributes]).to have_key(:name)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="267">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(item[:attributes][:name]).to eq(&quot;#{target_item.name}&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="268">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="269">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(item[:attributes]).to have_key(:description)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="270">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(item[:attributes][:description]).to eq(&quot;#{target_item.description}&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="271">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="272">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(item[:attributes]).to have_key(:unit_price)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="273">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(item[:attributes][:unit_price]).to eq(target_item.unit_price)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="274">
             
             
 
@@ -11883,7 +12510,623 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="259">
+          <li class="never" data-hits="" data-linenumber="275">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="276">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  it &#39;edge case: min_price cannot be more than max_price&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="277">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    merchant_1 = create(:merchant)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="278">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    merchant_2 = create(:merchant)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="279">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    target_item = create(:item, unit_price: 1234567, merchant_id: merchant_1.id)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="280">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    non_search_item_1 = create(:item, name: &#39;Ski Bindings&#39;, merchant_id: merchant_1.id)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="281">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="282">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    get &quot;/api/v1/items/find?min_price=50&amp;max_price=5&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="283">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="284">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    return_value = JSON.parse(response.body, symbolize_names: true)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="285">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="286">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(response).to_not be_successful</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="287">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(response.status).to eq(400)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="288">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(return_value[:data][:message]).to eq(&quot;Min price can&#39;t be more than max price&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="289">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="290">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="291">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  it &#39;find all items by name&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="292">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    target_item_1 = create(:item, name: &#39;Target1&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="293">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    target_item_2 = create(:item, name: &#39;Target2&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="294">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    target_item_3 = create(:item, name: &#39;Target3&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="295">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    other_items = create_list(:item, 10)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="296">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="297">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    get &quot;/api/v1/items/find_all?name=target&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="298">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="299">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    search_item = JSON.parse(response.body, symbolize_names: true)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="300">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    items_data = search_item[:data]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="301">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="302">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(response).to be_successful</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="303">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(items_data.count).to eq(3)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="304">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="305">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    items_data.each do |item|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="306">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">      expect(item).to have_key(:id)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="307">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">      expect(item[:id].to_i).to be_an(Integer)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="308">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="309">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">      expect(item[:attributes]).to have_key(:name)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="310">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">      expect(item[:attributes][:name]).to be_an(String)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="311">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="312">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">      expect(item[:attributes]).to have_key(:description)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="313">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">      expect(item[:attributes][:description]).to be_an(String)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="314">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="315">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">      expect(item[:attributes]).to have_key(:unit_price)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="316">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">      expect(item[:attributes][:unit_price]).to be_an(Float)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="317">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="318">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="319">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="320">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  it &#39;edge case: no param given for find all items by name&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="321">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    items = create_list(:item, 10)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="322">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="323">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    get &quot;/api/v1/items/find_all&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="324">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="325">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    return_value = JSON.parse(response.body, symbolize_names: true)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="326">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="327">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(response).to_not be_successful</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="328">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(response.status).to eq(400)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="329">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(return_value[:data][:message]).to eq(&quot;Insufficent query parameters&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="330">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="331">
             
             
 
