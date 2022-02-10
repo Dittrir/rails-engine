@@ -1,29 +1,63 @@
 class Api::V1::SearchController < ApplicationController
   def find_item
-    if params[:name].present?
-      item = Item.where("lower(name) LIKE ?", "%#{params[:name].downcase}%")
-                 .order(:name)
-                 .first
+    if params[:min_price].present? && params[:name].present?
+      render(json: {data: {message: "Insufficent query parameters"}}, status: 400 )
+    elsif params[:max_price].present? && params[:name].present?
+      render(json: {data: {message: "Insufficent query parameters"}}, status: 400 )
+    elsif params[:min_price].present? && params[:max_price].present?
+      self.find_by_min_and_max_price
+    elsif params[:name].present?
+      self.find_by_name
+    elsif params[:min_price].present?
+      self.find_by_min_price
+    elsif params[:max_price].present? && params[:max_price].to_f > 0
+      self.find_by_max_price
+    else
+      render(json: {data: {message: "Insufficent query parameters"}}, status: 400 )
+    end
+  end
+
+  def find_by_name
+    item = Item.where("lower(name) LIKE ?", "%#{params[:name].downcase}%")
+               .order(:name)
+               .first
+    if item == nil
+      render(json: {data: {message: "There were no matches"}}, status: 200 )
+    else
+      render(json: ItemSerializer.new(item), status: 200)
+    end
+  end
+
+  def find_by_min_price
+    if params[:min_price].to_f < 0
+      render(json: {data: {error: "Error Message: Price parameters can't be less than 0"}}, status: 400 )
+    else
+    item = Item.where("unit_price >= ?", params[:min_price])
+               .order(:name)
+               .first
       if item == nil
         render(json: {data: {message: "There were no matches"}}, status: 200 )
       else
         render(json: ItemSerializer.new(item), status: 200)
       end
-    elsif params[:min_price].present?
-      if params[:min_price].to_f < 0
-        render(json: {data: {message: "Min Price can't be less than 0"}}, status: 400 )
-      else
-      item = Item.where("unit_price > ?", params[:min_price])
-                 .order(:name)
-                 .first
-        if item == nil
-          render(json: {data: {message: "There were no matches"}}, status: 200 )
-        else
-          render(json: ItemSerializer.new(item), status: 200)
-        end
-      end
-    elsif params[:max_price].present?
-      item = Item.where("unit_price < ?", params[:max_price])
+    end
+  end
+
+  def find_by_max_price
+    item = Item.where("unit_price <= ?", params[:max_price])
+               .order(unit_price: :desc)
+               .first
+    if item == nil
+      render(json: {data: {message: "There were no matches"}}, status: 200 )
+    else
+      render(json: ItemSerializer.new(item), status: 200)
+    end
+  end
+
+  def find_by_min_and_max_price
+    if params[:min_price].to_f < params[:max_price].to_f && params[:min_price].to_f > 0
+      item = Item.where("unit_price <= ?", params[:max_price])
+                 .where("unit_price >= ?", params[:min_price])
                  .order(unit_price: :desc)
                  .first
       if item == nil
@@ -31,9 +65,8 @@ class Api::V1::SearchController < ApplicationController
       else
         render(json: ItemSerializer.new(item), status: 200)
       end
-    elsif params[:min_price].present? && params[:max_price].present?
     else
-      render(json: {data: {message: "Insufficent query parameters"}}, status: 400 )
+      render(json: {data: {message: "Min price can't be more than max price"}}, status: 400 )
     end
   end
 
