@@ -219,6 +219,19 @@ RSpec.describe 'The search API' do
     expect(return_value[:data][:message]).to eq("There were no matches")
   end
 
+  it 'sad path: cannot send name and min price' do
+    merchant_1 = create(:merchant)
+    other_items = create_list(:item, 10, merchant_id: merchant_1.id)
+
+    get "/api/v1/items/find?min_price=-1"
+
+    return_value = JSON.parse(response.body, symbolize_names: true)
+
+    expect(response).to_not be_successful
+    expect(response.status).to eq(400)
+    expect(return_value[:data][:message]).to eq("Price parameters can't be less than 0")
+  end
+
   it 'find all items by name' do
     target_item_1 = create(:item, name: 'Target1')
     target_item_2 = create(:item, name: 'Target2')

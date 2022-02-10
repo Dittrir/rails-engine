@@ -13,7 +13,7 @@ class Api::V1::SearchController < ApplicationController
       if params[:min_price].to_f < 0
         render(json: {data: {message: "Price parameters can't be less than 0"}}, status: 400 )
       else
-      item = Item.where("unit_price > ?", params[:min_price])
+      item = Item.where("unit_price >= ?", params[:min_price])
                  .order(:name)
                  .first
         if item == nil
@@ -23,7 +23,7 @@ class Api::V1::SearchController < ApplicationController
         end
       end
     elsif params[:max_price].present? && params[:max_price].to_f > 0
-      item = Item.where("unit_price < ?", params[:max_price])
+      item = Item.where("unit_price <= ?", params[:max_price])
                  .order(unit_price: :desc)
                  .first
       if item == nil
@@ -32,10 +32,25 @@ class Api::V1::SearchController < ApplicationController
         render(json: ItemSerializer.new(item), status: 200)
       end
     elsif params[:min_price].present? && params[:max_price].present?
+      if params[:min_price].to_f < params[:max_price].to_f && params[:min_price].to_f > 0
+        item = Item.where("unit_price <= ?", params[:max_price])
+                   .where("unit_price >= ?", params[:min_price])
+                   .order(unit_price: :desc)
+                   .first
+        render(json: ItemSerializer.new(item), status: 200)
+      else
+        render(json: {data: {message: "Insufficent query parameters"}}, status: 400 )
+      end
+    elsif params[:min_price].present? && params[:name].present?
+      render(json: {data: {message: "Insufficent query parameters"}}, status: 400 )
     else
       render(json: {data: {message: "Insufficent query parameters"}}, status: 400 )
     end
   end
+
+
+
+
 
   def find_all_items
     if params[:name].present?
@@ -51,6 +66,10 @@ class Api::V1::SearchController < ApplicationController
     end
   end
 
+
+
+
+
   def find_merchant
     if params[:name].present?
       merchant = Merchant.where("lower(name) LIKE ?", "%#{params[:name].downcase}%")
@@ -65,6 +84,10 @@ class Api::V1::SearchController < ApplicationController
       render(json: {data: {message: "Insufficent query parameters"}}, status: 400 )
     end
   end
+
+
+
+
 
   def find_all_merchants
     if params[:name].present?
