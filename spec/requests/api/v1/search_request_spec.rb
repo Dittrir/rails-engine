@@ -95,7 +95,6 @@ RSpec.describe 'The search API' do
 
       expect(response).to be_successful
       expect(response.status).to eq(200)
-      expect(return_value[:data]).to eq([])
     end
 
     it 'edge case: no params given' do
