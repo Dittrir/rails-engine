@@ -11,7 +11,7 @@ class Api::V1::SearchController < ApplicationController
       end
     elsif params[:min_price].present?
       if params[:min_price].to_f < 0
-        render(json: {data: {message: "Min Price can't be less than 0"}}, status: 400 )
+        render(json: {data: {message: "Price parameters can't be less than 0"}}, status: 400 )
       else
       item = Item.where("unit_price > ?", params[:min_price])
                  .order(:name)
@@ -22,7 +22,7 @@ class Api::V1::SearchController < ApplicationController
           render(json: ItemSerializer.new(item), status: 200)
         end
       end
-    elsif params[:max_price].present?
+    elsif params[:max_price].present? && params[:max_price].to_f > 0
       item = Item.where("unit_price < ?", params[:max_price])
                  .order(unit_price: :desc)
                  .first

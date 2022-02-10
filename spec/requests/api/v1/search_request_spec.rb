@@ -169,8 +169,11 @@ RSpec.describe 'The search API' do
 
     get "/api/v1/items/find?min_price=-1"
 
+    return_value = JSON.parse(response.body, symbolize_names: true)
+
     expect(response).to_not be_successful
     expect(response.status).to eq(400)
+    expect(return_value[:data][:message]).to eq("Price parameters can't be less than 0")
   end
 
   it 'find one item by max price' do
