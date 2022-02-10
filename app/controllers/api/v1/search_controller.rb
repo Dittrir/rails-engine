@@ -17,12 +17,20 @@ class Api::V1::SearchController < ApplicationController
                  .order(:name)
                  .first
         if item == nil
-          render(json: {data: {message: "There were no matches"}}, status: 400 )
+          render(json: {data: {message: "There were no matches"}}, status: 200 )
         else
           render(json: ItemSerializer.new(item), status: 200)
         end
       end
     elsif params[:max_price].present?
+      item = Item.where("unit_price < ?", params[:max_price])
+                 .order(unit_price: :desc)
+                 .first
+      if item == nil
+        render(json: {data: {message: "There were no matches"}}, status: 200 )
+      else
+        render(json: ItemSerializer.new(item), status: 200)
+      end
     elsif params[:min_price].present? && params[:max_price].present?
     else
       render(json: {data: {message: "Insufficent query parameters"}}, status: 400 )
