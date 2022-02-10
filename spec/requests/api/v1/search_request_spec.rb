@@ -95,6 +95,7 @@ RSpec.describe 'The search API' do
 
       expect(response).to be_successful
       expect(response.status).to eq(200)
+      expect(return_value[:data]).to eq([])
     end
 
     it 'edge case: no params given' do
@@ -223,16 +224,17 @@ RSpec.describe 'The search API' do
         expect(item_data[:attributes][:unit_price]).to eq(target_item.unit_price)
       end
 
-      it 'sad path: price too low and no match found' do
+      it 'sad path: price too high and no match found' do
         merchant_1 = create(:merchant)
         other_items = create_list(:item, 10, merchant_id: merchant_1.id)
 
-        get "/api/v1/items/find?min_price=0"
+        get "/api/v1/items/find?min_price=100000000"
 
         return_value = JSON.parse(response.body, symbolize_names: true)
 
         expect(response).to be_successful
         expect(response.status).to eq(200)
+        expect(return_value[:data][:message]).to eq("There were no matches")
       end
 
       it 'edge case: min price cannot be less than 0' do
@@ -294,11 +296,11 @@ RSpec.describe 'The search API' do
         expect(item[:attributes][:unit_price]).to eq(target_item.unit_price)
       end
 
-      it 'sad path: price too high and no matches found' do
+      it 'sad path: price too low and no matches found' do
         target_item_1 = create(:item, name: 'Target1')
         other_items = create_list(:item, 10)
 
-        get "/api/v1/items/find?min_price=10000000"
+        get "/api/v1/items/find?max_price=0"
 
         return_value = JSON.parse(response.body, symbolize_names: true)
 
@@ -368,12 +370,13 @@ RSpec.describe 'The search API' do
         merchant_1 = create(:merchant)
         other_items = create_list(:item, 10, merchant_id: merchant_1.id)
 
-        get "/api/v1/items/find?min_price=5000&min_price=5001"
+        get "/api/v1/items/find?min_price=5000&max_price=5001"
 
         return_value = JSON.parse(response.body, symbolize_names: true)
 
         expect(response).to be_successful
         expect(response.status).to eq(200)
+        expect(return_value[:data][:message]).to eq("There were no matches")
       end
 
       it 'edge case: cannot send name and min price' do
@@ -459,6 +462,7 @@ RSpec.describe 'The search API' do
 
       expect(response).to be_successful
       expect(response.status).to eq(200)
+      expect(return_value[:data]).to eq([])
     end
 
     it 'edge case: no param given for find all items by name' do

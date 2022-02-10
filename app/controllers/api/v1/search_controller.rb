@@ -77,9 +77,9 @@ class Api::V1::SearchController < ApplicationController
   def find_all_items
     if params[:name].present?
       item = Item.where("lower(name) LIKE ?", "%#{params[:name].downcase}%")
-                         .order(:name)
-      if item == nil
-        render(json: {data: {message: "There were no matches"}}, status: 200 )
+                 .order(:name)
+      if item == []
+        render(json: {data: []}, status: 200 )
       else
         render(json: ItemSerializer.new(item), status: 200)
       end
@@ -107,8 +107,8 @@ class Api::V1::SearchController < ApplicationController
     if params[:name].present?
       merchant = Merchant.where("lower(name) LIKE ?", "%#{params[:name].downcase}%")
                          .order(:name)
-      if merchant == nil
-        render(json: {data: {message: "There were no matches"}}, status: 200 )
+      if merchant == []
+        render(json: {data: []}, status: 200 )
       else
         render(json: MerchantSerializer.new(merchant), status: 200)
       end
