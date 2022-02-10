@@ -120,7 +120,7 @@ RSpec.describe 'The search API' do
     expect(item_data[:attributes][:unit_price]).to eq(target_item.unit_price)
   end
 
-  it 'edge case: no match found find one item by name fragment' do
+  it 'edge case: no match found find one item by name' do
     target_item_1 = create(:item, name: 'Target1')
     other_items = create_list(:item, 10)
 
@@ -169,14 +169,54 @@ RSpec.describe 'The search API' do
 
     get "/api/v1/items/find?min_price=-1"
 
-    return_value = JSON.parse(response.body, symbolize_names: true)
-
     expect(response).to_not be_successful
     expect(response.status).to eq(400)
-    expect(return_value[:data][:message]).to eq("Min Price can't be less than 0")
   end
 
-  it 'find all items by name fragment' do
+  it 'find one item by max price' do
+    merchant_1 = create(:merchant)
+    merchant_2 = create(:merchant)
+    target_item = create(:item, unit_price: 1234567, merchant_id: merchant_1.id)
+    non_search_item_1 = create(:item, name: 'Ski Bindings', merchant_id: merchant_1.id)
+    non_search_item_2 = create(:item, name: 'Art Supplies', merchant_id: merchant_2.id)
+    non_search_item_3 = create(:item, name: 'Bazooka', merchant_id: merchant_2.id)
+
+    get "/api/v1/items/find?max_price=1234568"
+
+    search_item = JSON.parse(response.body, symbolize_names: true)
+
+    expect(response).to be_successful
+    expect(search_item.count).to eq(1)
+
+    item = search_item[:data]
+
+    expect(item).to have_key(:id)
+    expect(item[:id].to_i).to be_an(Integer)
+
+    expect(item[:attributes]).to have_key(:name)
+    expect(item[:attributes][:name]).to eq("#{target_item.name}")
+
+    expect(item[:attributes]).to have_key(:description)
+    expect(item[:attributes][:description]).to eq("#{target_item.description}")
+
+    expect(item[:attributes]).to have_key(:unit_price)
+    expect(item[:attributes][:unit_price]).to eq(target_item.unit_price)
+  end
+
+  it 'edge case: price too high and no matches found for find one item by price' do
+    target_item_1 = create(:item, name: 'Target1')
+    other_items = create_list(:item, 10)
+
+    get "/api/v1/items/find?min_price=10000000"
+
+    return_value = JSON.parse(response.body, symbolize_names: true)
+
+    expect(response).to be_successful
+    expect(response.status).to eq(200)
+    expect(return_value[:data][:message]).to eq("There were no matches")
+  end
+
+  it 'find all items by name' do
     target_item_1 = create(:item, name: 'Target1')
     target_item_2 = create(:item, name: 'Target2')
     target_item_3 = create(:item, name: 'Target3')
@@ -205,7 +245,7 @@ RSpec.describe 'The search API' do
     end
   end
 
-  it 'edge case: no param given for find all items by name fragment' do
+  it 'edge case: no param given for find all items by name' do
     items = create_list(:item, 10)
 
     get "/api/v1/items/find_all"
