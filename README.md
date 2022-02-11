@@ -12,17 +12,29 @@ Rails-engine is an application developed to mimic an E-Commerce Application. The
 
 ## Local Setup
 1. Fork and Clone the repo 
-```git clone git@github.com:Dittrir/rails-engine.git```
+```shell
+$ it clone git@github.com:Dittrir/rails-engine.git
+```
 2.  Navigate to directory 
-```cd viewing_party_lite```
+```shell
+$ cd viewing_party_lite
+```
 3. Install gem packages:
-```bundle install```
+```shell
+$ bundle install
+```
 4. Update gem packages: 
-```bundle update```
+```shell
+$ bundle update
+```
 5. Set up the schema: 
-```rails db:schema:dump```
+```shell
+$ rails db:schema:dump
+```
 6. SRun the migrations: 
-```rake db:{drop,create,migrate,seed}```
+```shell
+$ rake db:{drop,create,migrate,seed}
+```
 
 ## Versions
 - Ruby 2.7.2
