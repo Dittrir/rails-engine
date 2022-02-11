@@ -59,6 +59,8 @@ In order to test these collections, please use the following directions.
 3. Next, you’ll “confirm” the import. The test suite should display as a “Postman Collection v2.1” and import as a “Collection”. Click the “Import” button to continue.
 4. Within your collections in Postman, you should see two collections– “Rails Engine Lite, Part 1”, and “Rails Engine Lite, Part 2”.
 
+You will find that this project has **100% coverage** both locally and through Postman.
+
 ## Versions
 - Ruby 2.7.2
 - Rails 5.2.6
