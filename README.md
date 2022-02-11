@@ -1,5 +1,5 @@
 # Rails-Engine Lite: Turing 2110 BE Mod 3
-[![GitHub commits](https://badgen.net/github/commits/Naereen/Strapdown.js)](https://GitHub.com/Naereen/StrapDown.js/commit/)
+[![GitHub commits](https://badgen.net/github/commits/Dittrir/rails-engine)](https://GitHub.com/Naereen/StrapDown.js/commit/)
 ![languages](https://img.shields.io/github/languages/top/Dittrir/rails-engine?color=red)
 ![rspec](https://img.shields.io/gem/v/rspec?color=blue&label=rspec)
 ![simplecov](https://img.shields.io/gem/v/simplecov?color=blue&label=simplecov) <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
