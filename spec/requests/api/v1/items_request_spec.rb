@@ -113,6 +113,7 @@ RSpec.describe 'The item API' do
     end
   end
 
+
   describe "updates an existing item" do
     it 'happy path' do
       merchant_1 = create(:merchant)
@@ -173,6 +174,7 @@ RSpec.describe 'The item API' do
       expect{Item.find(item.id)}.to raise_error(ActiveRecord::RecordNotFound)
     end
   end
+
 
   describe "returns merchant data for the given item id" do
     it 'happy path' do
