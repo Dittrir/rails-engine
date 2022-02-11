@@ -44,6 +44,21 @@ $ rails db:schema:dump
 $ rake db:{drop,create,migrate,seed}
 ```
 
+## How It Works
+This project was designed around tests that were created in [Postman](https://www.postman.com/). These tests ensure functionality over all databases and controller actions and can be viewed in depth by clicking on the links below.
+
+[Postman Test Collection 1](https://backend.turing.edu/module3/projects/rails_engine_lite/RailsEngineSection1.postman_collection.json)
+
+[Postman Test Collection 2](https://backend.turing.edu/module3/projects/rails_engine_lite/RailsEngineSection2.postman_collection.json)
+
+There are two ways to run the test suite: one endpoint at a time, or the whole suite.
+
+In order to test these collections, please use the following directions.
+1. Click on each link to load it in your browser, then hit Cmd-S to save it to your system.
+2. In Postman, in the top left corner, click on the “Import” button, and use the file selector to locate the two files on your operating system.
+3. Next, you’ll “confirm” the import. The test suite should display as a “Postman Collection v2.1” and import as a “Collection”. Click the “Import” button to continue.
+4. Within your collections in Postman, you should see two collections– “Rails Engine Lite, Part 1”, and “Rails Engine Lite, Part 2”.
+
 ## Versions
 - Ruby 2.7.2
 - Rails 5.2.6
