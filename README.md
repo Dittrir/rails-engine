@@ -22,7 +22,7 @@ Rails-engine is an application developed to mimic an E-Commerce Application. The
 
 ## Schema
 <img width="563" alt="Screen Shot 2022-02-10 at 8 31 55 PM" src="https://user-images.githubusercontent.com/89048720/153537872-c3b37d16-674b-43b7-820d-507b8501167d.png">
-This project primarily focuses on the "Merchant" and "Item" databases.
+This project primarily focuses on the "Items" and "Merchant" tables.
 
 ## Local Setup
 1. Fork and Clone the repo 
