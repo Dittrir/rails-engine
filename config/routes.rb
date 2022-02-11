@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       get '/items/find', to: 'search#find_item'
       get '/items/find_all', to: 'search#find_all_items'
-      
+
       get '/merchants/find', to: 'search#find_merchant'
       get '/merchants/find_all', to: 'search#find_all_merchants'
 
