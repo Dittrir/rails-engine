@@ -1,10 +1,13 @@
 # Rails-Engine Lite: Turing 2110 BE Mod 3
+
 [![Dittrir commits](https://badgen.net/github/commits/Naereen/StrapDown.js)](https://GitHub.com/Dittrir/rails-engine/commits?author=Dittrir)
 ![languages](https://img.shields.io/github/languages/top/Dittrir/rails-engine?color=red)
 ![rspec](https://img.shields.io/gem/v/rspec?color=blue&label=rspec)
 ![simplecov](https://img.shields.io/gem/v/simplecov?color=blue&label=simplecov) <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/contributors-1-orange.svg?style=flat)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
+
+![image](https://user-images.githubusercontent.com/89048720/153535281-582015ee-2682-44cc-bae1-84b7d98d418e.png)
 
 ## Description
 Rails-engine is an application developed to mimic an E-Commerce Application. The plan was to structure this in a service-oriented architecture, meaning the front and back ends of this application are separate and communicate via APIs. My job was to expose the data that powers the site through an API that the front end will consume.
