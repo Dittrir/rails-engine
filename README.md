@@ -9,14 +9,20 @@
 
 ![image](https://user-images.githubusercontent.com/89048720/153535281-582015ee-2682-44cc-bae1-84b7d98d418e.png)
 
+
 ## Description
 Rails-engine is an application developed to mimic an E-Commerce Application. The plan was to structure this in a service-oriented architecture, meaning the front and back ends of this application are separate and communicate via APIs. My job was to expose the data that powers the site through an API that the front end will consume.
+
 
 ## Learning Goals 
 - Expose an API
 - Use serializers to format JSON responses
 - Test API exposure
 - Use SQL and AR to gather data
+
+## Schema
+<img width="563" alt="Screen Shot 2022-02-10 at 8 31 55 PM" src="https://user-images.githubusercontent.com/89048720/153537872-c3b37d16-674b-43b7-820d-507b8501167d.png">
+This project primarily focuses on the "Merchant" and "Item" databases.
 
 ## Local Setup
 1. Fork and Clone the repo 
@@ -44,6 +50,7 @@ $ rails db:schema:dump
 $ rake db:{drop,create,migrate,seed}
 ```
 
+
 ## How It Works
 This project was designed around tests that were created in [Postman](https://www.postman.com/). These tests ensure functionality over all databases and controller actions and can be viewed in depth by clicking on the links below.
 
@@ -61,9 +68,11 @@ In order to test these collections, please use the following directions.
 
 You will find that this project has **100% coverage** both locally and through Postman.
 
+
 ## Versions
 - Ruby 2.7.2
 - Rails 5.2.6
+
 
 # Gems
 - `gem 'pry'`
@@ -73,7 +82,8 @@ You will find that this project has **100% coverage** both locally and through P
 - `gem 'faker', github: 'stympy/faker'`
 - `gem 'simplecov', require: false, group: :test`
 
-## Contributor
+
+## Author
 
 <a href="https://github.com/Dittrir/rails-engine/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=Dittrir/rails-engine" />
